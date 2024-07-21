@@ -1,0 +1,41 @@
+﻿@model List<Exam>
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="col-12">
+    <div class="bg-secondary rounded h-100 p-4">
+        <h6 class="mb-4">Hoverable Table</h6>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Course Code</th>
+                    <th scope="col">Student Number</th>
+                    <th scope="col">Exam Date</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr>
+                        <th scope="row">@c.Id</th>
+                        <td>@c.CourseCode</td>
+                        <td>@c.StudentNumber</td>
+                        <td>@c.ExamDate.Date</td>
+                        <td>@c.Score</td>
+                        <td>
+                            <span>
+                                <a class="btn btn-link" href="@Url.Action("EditExam","Home",new {c.Id})">Edit</a>
+                                <a class="btn btn-link" href="@Url.Action("DeleteExam","Home",new {c.Id})">Delete</a>
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

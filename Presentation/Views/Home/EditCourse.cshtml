@@ -1,0 +1,39 @@
+﻿@model UpdateCourse
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="col-12">
+    <div class="bg-secondary rounded h-100 p-4">
+        <h6 class="mb-4">Add Student</h6>
+        <form asp-controller="Home" asp-action="UpdateCourse" asp-route-id="@ViewBag.Id" method="post">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">Code</label>
+                <input type="text" asp-for="CourseCode" class="form-control" id="courseCode" />
+                <span asp-validation-for="CourseCode" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Name</label>
+                <input type="text" asp-for="CourseName" class="form-control" id="courseName" />
+                <span asp-validation-for="CourseName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="grade" class="form-label">Grade</label>
+                <input type="text" asp-for="Grade" class="form-control" id="grade" />
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="grade" class="form-label">Teacher FirstName</label>
+                <input type="text" asp-for="TeacherFirstName" class="form-control" id="teacherFirstName" />
+                <span asp-validation-for="TeacherFirstName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label for="grade" class="form-label">Teacher LastName</label>
+                <input type="text" asp-for="TeacherLastName" class="form-control" id="teacherLastName" />
+                <span asp-validation-for="TeacherLastName" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Accept</button>
+        </form>
+    </div>
+</div>
